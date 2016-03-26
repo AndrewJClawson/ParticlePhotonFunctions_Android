@@ -49,4 +49,8 @@ public class StartupActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void SetupUIComponents(){
+
+    }
 }
