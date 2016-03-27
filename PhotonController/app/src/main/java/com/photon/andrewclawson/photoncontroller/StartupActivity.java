@@ -1,5 +1,6 @@
-package com.example.andrewclawson.photoncontroller;
+package com.photon.andrewclawson.photoncontroller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,9 +9,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class StartupActivity extends AppCompatActivity {
-
+    Button LEDControllerButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +28,8 @@ public class StartupActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        SetupUIComponents();
     }
 
     @Override
@@ -51,6 +55,12 @@ public class StartupActivity extends AppCompatActivity {
     }
 
     public void SetupUIComponents(){
+        LEDControllerButton = (Button) findViewById(R.id.ledControllerButton);
+    }
 
+    public void ledControllerButtonPressed(View view){
+        Intent LEDIntent = new Intent(view.getContext(),LEDControllerActivity.class);
+        startActivity(LEDIntent);
+        this.finish();
     }
 }

@@ -1,4 +1,4 @@
-package com.example.andrewclawson.photoncontroller;
+package com.photon.andrewclawson.photoncontroller;
 
 import org.junit.Test;
 
